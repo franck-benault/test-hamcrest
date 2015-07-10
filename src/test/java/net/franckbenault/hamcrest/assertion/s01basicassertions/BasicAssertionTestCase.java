@@ -8,8 +8,6 @@ import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.sameInstance;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.Test;
 
