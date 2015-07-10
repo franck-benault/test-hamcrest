@@ -1,4 +1,4 @@
-package net.franckbenault.hamcrest.assertion.s01basicassertions;
+package net.franckbenault.hamcrest.assertion.s01basicmatching;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.sameInstance;
 
 import org.junit.Test;
 
-public class BasicAssertionTestCase {
+public class BasicMatchingTestCase {
 
 	
 
