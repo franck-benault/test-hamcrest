@@ -8,7 +8,7 @@ import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.Matchers.lessThanOrEqualTo;
 import static org.hamcrest.Matchers.both;
 import static org.hamcrest.Matchers.allOf;
-
+import static org.hamcrest.number.IsCloseTo.closeTo;
 
 import org.junit.Test;
 
@@ -77,6 +77,17 @@ public class NumericMatchingTestCase {
 		//two solutions
 		assertThat(v1, is(both(greaterThan(v2)).and(lessThan(v3))));
 		assertThat(v1, is(allOf(greaterThan(v2),lessThan(v3))));
+		
+	}
+	
+	@Test
+	public void t04CloseTo() {
+		
+		double v1 = 10.5;
+		double v2 = 10.3;
+		double delta = 0.4;
+		
+		assertThat(v1, is(closeTo(v2,delta)));
 	}
 	
 	
