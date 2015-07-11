@@ -7,6 +7,7 @@ import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.Matchers.lessThanOrEqualTo;
 import static org.hamcrest.Matchers.both;
+import static org.hamcrest.Matchers.allOf;
 
 
 import org.junit.Test;
@@ -67,14 +68,15 @@ public class NumericMatchingTestCase {
 	public void t03Between() {
 		
 		//between does not exist in hamcrest
-		//but there is a solution
+		//but there is solutions
 		
 		int v1 =5;
 		int v2 =4;
 		int v3 =7;
 
-		
+		//two solutions
 		assertThat(v1, is(both(greaterThan(v2)).and(lessThan(v3))));
+		assertThat(v1, is(allOf(greaterThan(v2),lessThan(v3))));
 	}
 	
 	
