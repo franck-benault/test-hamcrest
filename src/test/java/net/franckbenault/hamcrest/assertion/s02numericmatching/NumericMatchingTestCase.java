@@ -17,7 +17,7 @@ public class NumericMatchingTestCase {
 
 
 	@Test
-	public void t01aAssertGreaterThan() {
+	public void t01aGreaterThan() {
 		
 		int v1 =7;
 		int v2 =5;
@@ -28,7 +28,7 @@ public class NumericMatchingTestCase {
 
 
 	@Test
-	public void t01bAssertGreaterThanOrEqualTo() {
+	public void t01bGreaterThanOrEqualTo() {
 		
 		int v1 =7;
 		int v2 =5;
@@ -39,5 +39,28 @@ public class NumericMatchingTestCase {
 		assertThat(v1,is(greaterThanOrEqualTo(v3)));
 	}
 	
+	
+	@Test
+	public void t02aLessThan() {
+		
+		int v1 =5;
+		int v2 =7;
+
+		
+		assertThat(v1,is(lessThan(v2)));
+	}
+
+
+	@Test
+	public void t02bLessThanOrEqualTo() {
+		
+		int v1 =5;
+		int v2 =7;
+		int v3 =5;
+
+		
+		assertThat(v1,is(lessThanOrEqualTo(v2)));
+		assertThat(v1,is(lessThanOrEqualTo(v3)));
+	}
 
 }
