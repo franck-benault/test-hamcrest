@@ -7,7 +7,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.sameInstance;
-
+import static org.hamcrest.Matchers.describedAs;
 
 import org.junit.Test;
 
@@ -24,6 +24,7 @@ public class BasicMatchingTestCase {
 
 		
 		assertThat(ints1,is(equalTo(ints2)));
+		assertThat(ints1,describedAs("a second tab of int",is(equalTo(ints2))));
 	}
 
 	@Test
