@@ -9,6 +9,10 @@ import static org.hamcrest.Matchers.lessThanOrEqualTo;
 import static org.hamcrest.Matchers.both;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.number.IsCloseTo.closeTo;
+import org.hamcrest.number.BigDecimalCloseTo;
+
+
+import java.math.BigDecimal;
 
 import org.junit.Test;
 
@@ -81,13 +85,25 @@ public class NumericMatchingTestCase {
 	}
 	
 	@Test
-	public void t04CloseTo() {
+	public void t04aCloseTo() {
 		
 		double v1 = 10.5;
 		double v2 = 10.3;
 		double delta = 0.4;
 		
 		assertThat(v1, is(closeTo(v2,delta)));
+	}
+	
+
+	
+	@Test
+	public void t04bCloseToBigDecimal() {
+		
+		BigDecimal v1 = new BigDecimal(10.5);
+		BigDecimal v2 = new BigDecimal(10.3);
+		BigDecimal delta = new BigDecimal(0.4);
+		
+		assertThat(v1, is(BigDecimalCloseTo.closeTo(v2,delta)));
 	}
 	
 	
