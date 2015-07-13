@@ -6,6 +6,8 @@ import static org.hamcrest.text.IsEmptyString.isEmptyOrNullString;
 import static org.hamcrest.text.IsEqualIgnoringCase.equalToIgnoringCase;
 import static org.hamcrest.text.IsEqualIgnoringWhiteSpace.equalToIgnoringWhiteSpace;
 import static org.hamcrest.core.StringContains.containsString;
+import static org.hamcrest.core.StringStartsWith.startsWith;
+import static org.hamcrest.core.StringEndsWith.endsWith;
 
 import org.junit.Test;
 
@@ -56,5 +58,22 @@ public class StringMatchingTestCase {
 	
 		assertThat(s1,containsString(s2));
 	}
+
+	@Test
+	public void t04aStartsWith() {
+		
+		String s1 = "A big string";
+		String s2 = "A big";
 	
+		assertThat(s1,startsWith(s2));
+	}
+	
+	@Test
+	public void t04bStartsWith() {
+		
+		String s1 = "A big string";
+		String s2 = "ring";
+	
+		assertThat(s1,endsWith(s2));
+	}
 }
