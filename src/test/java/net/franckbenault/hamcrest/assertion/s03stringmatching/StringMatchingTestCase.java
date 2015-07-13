@@ -5,6 +5,7 @@ import static org.hamcrest.text.IsEmptyString.isEmptyString;
 import static org.hamcrest.text.IsEmptyString.isEmptyOrNullString;
 import static org.hamcrest.text.IsEqualIgnoringCase.equalToIgnoringCase;
 import static org.hamcrest.text.IsEqualIgnoringWhiteSpace.equalToIgnoringWhiteSpace;
+import static org.hamcrest.core.StringContains.containsString;
 
 import org.junit.Test;
 
@@ -46,6 +47,14 @@ public class StringMatchingTestCase {
 	
 		assertThat(s1,equalToIgnoringWhiteSpace(s2));
 	}
+
+	@Test
+	public void t03ContainsString() {
+		
+		String s1 = "A big string";
+		String s2 = "big";
 	
+		assertThat(s1,containsString(s2));
+	}
 	
 }
