@@ -8,6 +8,10 @@ import static org.hamcrest.text.IsEqualIgnoringWhiteSpace.equalToIgnoringWhiteSp
 import static org.hamcrest.core.StringContains.containsString;
 import static org.hamcrest.core.StringStartsWith.startsWith;
 import static org.hamcrest.core.StringEndsWith.endsWith;
+import static org.hamcrest.text.StringContainsInOrder.stringContainsInOrder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -51,13 +55,31 @@ public class StringMatchingTestCase {
 	}
 
 	@Test
-	public void t03ContainsString() {
+	public void t03aContainsString() {
 		
 		String s1 = "A big string";
 		String s2 = "big";
 	
 		assertThat(s1,containsString(s2));
 	}
+	
+	@Test
+	public void t03bStringContainsInOrder() {
+		
+		String s = "A big string";
+		String s1 = "A";
+		String s2 = "big";
+		String s3 = "string";
+	
+		List<String> iter = new ArrayList<String>();
+		iter.add(s1);
+		iter.add(s2);
+		iter.add(s3);
+		
+		assertThat(s,stringContainsInOrder(iter));
+	}
+	
+
 
 	@Test
 	public void t04aStartsWith() {
