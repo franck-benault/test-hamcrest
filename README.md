@@ -15,8 +15,16 @@ Last version 1,3 : July 2012
 no dependency
 
 # basic matching
+## matching is equal to
+```
+assertThat(ints1,is(equalTo(ints2)));
+```
+## matching is not equal to
+```
+assertThat(s1,is(not(equalTo(s2))));
+```
 
 # numeric matching
 
 # string matching
-## test1
+
