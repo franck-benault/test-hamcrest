@@ -28,3 +28,9 @@ assertThat(s1,is(not(equalTo(s2))));
 
 # string matching
 
+# Collection matching
+## matching empty
+```
+assertThat(col,empty());
+assertThat(col,emptyCollectionOf(String.class));
+```
