@@ -5,6 +5,7 @@ import static org.hamcrest.collection.IsEmptyCollection.empty;
 import static org.hamcrest.collection.IsEmptyCollection.emptyCollectionOf;
 import static org.hamcrest.collection.IsEmptyIterable.emptyIterable;
 import static org.hamcrest.collection.IsEmptyIterable.emptyIterableOf;
+import static org.hamcrest.collection.IsIn.isIn;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -45,4 +46,14 @@ public class CollectionMatchingTestCase {
 		assertThat(col,emptyIterableOf(String.class));
 	}
 
+	@Test
+	public void t02IsIn() {
+		
+		List<String> col1 = new ArrayList<String>();
+		col1.add("v1");
+		col1.add("v2");
+
+
+		assertThat("v1",isIn(col1));
+	}
 }
