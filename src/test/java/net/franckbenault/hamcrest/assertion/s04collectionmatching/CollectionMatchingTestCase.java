@@ -47,7 +47,7 @@ public class CollectionMatchingTestCase {
 	}
 
 	@Test
-	public void t02IsIn() {
+	public void t02aIsInCollection() {
 		
 		List<String> col1 = new ArrayList<String>();
 		col1.add("v1");
@@ -55,5 +55,14 @@ public class CollectionMatchingTestCase {
 
 
 		assertThat("v1",isIn(col1));
+	}
+	
+	@Test
+	public void t02bIsIntabs() {
+		
+		String tab[] = {"v1","v2"};
+
+
+		assertThat("v1",isIn(tab));
 	}
 }
