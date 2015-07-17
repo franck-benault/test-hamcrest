@@ -24,6 +24,21 @@ this object m has a method matches(Object item):boolean
 
 The matchers can be used outside the tests, but they are very useful in the tests.
 
+## Matcher in production code with Lambdaj
+### Maven dependency
+```
+<dependency>
+	<groupId>com.googlecode.lambdaj</groupId>
+	<artifactId>lambdaj</artifactId>
+	<version>2.3.3</version>
+</dependency>
+```
+### sample code
+You can writte with Lambdaj functional code
+```
+List<Item> items2 = select(items,having(on(Item.class).getPrice(), lessThan(10)));
+```
+
 # basic matching
 ## matching anything
 assertThat("", anything());
