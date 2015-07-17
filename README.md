@@ -14,6 +14,16 @@ Last version 1,3 : July 2012
 ```
 no dependency
 
+# matching presentation
+## First Matcher
+```
+	String s = "a string";		
+	Matcher<String> m = is(equalTo(s));
+```
+this object m has a method matches(Object item):boolean
+
+The matchers can be used outside the tests, but they are very useful in the tests.
+
 # basic matching
 ## matching is equal to
 ```
