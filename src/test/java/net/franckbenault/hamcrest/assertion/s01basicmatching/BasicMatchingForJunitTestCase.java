@@ -8,12 +8,19 @@ import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.sameInstance;
 import static org.hamcrest.Matchers.describedAs;
+import static org.hamcrest.core.IsAnything.anything;
 
 import org.junit.Test;
 
 public class BasicMatchingForJunitTestCase {
 
-	
+
+	@Test
+	public void t00IsAnything() {
+		
+		
+		assertThat("", anything());
+	}
 
 
 	@Test

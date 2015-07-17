@@ -25,6 +25,9 @@ this object m has a method matches(Object item):boolean
 The matchers can be used outside the tests, but they are very useful in the tests.
 
 # basic matching
+## matching anything
+assertThat("", anything());
+
 ## matching is equal to
 ```
 assertThat(ints1,is(equalTo(ints2)));
