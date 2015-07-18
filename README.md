@@ -62,3 +62,9 @@ assertThat(s1,is(not(equalTo(s2))));
 assertThat(col,empty());
 assertThat(col,emptyCollectionOf(String.class));
 ```
+## matching with the content of the collection
+### hasSize
+```
+List<String> col1 = Arrays.asList("v1","v2");
+assertThat(col1,hasSize(2));
+```

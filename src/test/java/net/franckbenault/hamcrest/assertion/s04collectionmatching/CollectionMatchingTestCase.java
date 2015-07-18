@@ -6,8 +6,10 @@ import static org.hamcrest.collection.IsEmptyCollection.emptyCollectionOf;
 import static org.hamcrest.collection.IsEmptyIterable.emptyIterable;
 import static org.hamcrest.collection.IsEmptyIterable.emptyIterableOf;
 import static org.hamcrest.collection.IsIn.isIn;
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -49,9 +51,7 @@ public class CollectionMatchingTestCase {
 	@Test
 	public void t02aIsInCollection() {
 		
-		List<String> col1 = new ArrayList<String>();
-		col1.add("v1");
-		col1.add("v2");
+		List<String> col1 = Arrays.asList("v1","v2");
 
 
 		assertThat("v1",isIn(col1));
@@ -64,5 +64,14 @@ public class CollectionMatchingTestCase {
 
 
 		assertThat("v1",isIn(tab));
+	}
+	
+	@Test
+	public void t02cHasSize() {
+		
+		List<String> col1 = Arrays.asList("v1","v2");
+		String tab[] = {"v1","v2"};
+
+		assertThat(col1,hasSize(2));
 	}
 }
