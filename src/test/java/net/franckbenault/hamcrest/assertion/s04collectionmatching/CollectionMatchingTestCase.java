@@ -7,6 +7,8 @@ import static org.hamcrest.collection.IsEmptyIterable.emptyIterable;
 import static org.hamcrest.collection.IsEmptyIterable.emptyIterableOf;
 import static org.hamcrest.collection.IsIn.isIn;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
+import static org.hamcrest.Matchers.contains;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -70,8 +72,14 @@ public class CollectionMatchingTestCase {
 	public void t02cHasSize() {
 		
 		List<String> col1 = Arrays.asList("v1","v2");
-		String tab[] = {"v1","v2"};
-
 		assertThat(col1,hasSize(2));
+	}
+	
+	@Test
+	public void t02dContains() {
+		
+		List<String> col1 = Arrays.asList("v1","v2","v3");
+		//contains = strict order all items
+		assertThat(col1,contains("v1","v2", "v3"));
 	}
 }
