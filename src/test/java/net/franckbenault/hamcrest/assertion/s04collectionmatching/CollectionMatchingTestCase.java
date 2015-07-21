@@ -9,6 +9,7 @@ import static org.hamcrest.collection.IsIn.isIn;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.hamcrest.Matchers.hasItems;
 
 
 import java.util.ArrayList;
@@ -90,5 +91,13 @@ public class CollectionMatchingTestCase {
 		List<String> col1 = Arrays.asList("v1","v2","v3");
 		//contains = contains all items but the order in not important
 		assertThat(col1,containsInAnyOrder("v2","v1", "v3"));
+	}
+	
+	@Test
+	public void t02dHasItems() {
+		
+		List<String> col1 = Arrays.asList("v1","v2","v3");
+		//contains = contains all items but the order in not important
+		assertThat(col1,hasItems("v3", "v1"));
 	}
 }

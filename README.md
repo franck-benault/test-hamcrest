@@ -83,3 +83,9 @@ List<String> col1 = Arrays.asList("v1","v2","v3");
 assertThat(col1,containsInAnyOrder("v2","v1", "v3")); //OK
 assertThat(col1,containsInAnyOrder("v2","v3")); //Not OK
 ```
+#### hasItems
+hasItems = not all items, the order in not important
+```		
+List<String> col1 = Arrays.asList("v1","v2","v3");
+assertThat(col1,hasItems("v3", "v1")); //OK
+```
