@@ -68,3 +68,18 @@ assertThat(col,emptyCollectionOf(String.class));
 List<String> col1 = Arrays.asList("v1","v2");
 assertThat(col1,hasSize(2));
 ```
+### elements in a collection
+#### contains
+contains = strict order all items
+```		
+List<String> col1 = Arrays.asList("v1","v2","v3");
+assertThat(col1,contains("v1","v2", "v3")); //OK
+assertThat(col1,contains("v1","v2")); //Not OK
+```
+#### containsInAnyOrder
+containsInAnyOrder = all items the order in not important
+```		
+List<String> col1 = Arrays.asList("v1","v2","v3");
+assertThat(col1,containsInAnyOrder("v2","v1", "v3")); //OK
+assertThat(col1,containsInAnyOrder("v2","v3")); //Not OK
+```

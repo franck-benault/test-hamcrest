@@ -8,6 +8,7 @@ import static org.hamcrest.collection.IsEmptyIterable.emptyIterableOf;
 import static org.hamcrest.collection.IsIn.isIn;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 
 
 import java.util.ArrayList;
@@ -81,5 +82,13 @@ public class CollectionMatchingTestCase {
 		List<String> col1 = Arrays.asList("v1","v2","v3");
 		//contains = strict order all items
 		assertThat(col1,contains("v1","v2", "v3"));
+	}
+	
+	@Test
+	public void t02eContainsInAnyOrder() {
+		
+		List<String> col1 = Arrays.asList("v1","v2","v3");
+		//contains = contains all items but the order in not important
+		assertThat(col1,containsInAnyOrder("v2","v1", "v3"));
 	}
 }
