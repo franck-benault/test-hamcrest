@@ -89,3 +89,11 @@ hasItems = not all items, the order in not important
 List<String> col1 = Arrays.asList("v1","v2","v3");
 assertThat(col1,hasItems("v3", "v1")); //OK
 ```
+
+#### everyItem
+```
+List<Integer> col1 = Arrays.asList(2,3,4);
+assertThat(col1,everyItem(greaterThan(1)));
+```
+
+```
