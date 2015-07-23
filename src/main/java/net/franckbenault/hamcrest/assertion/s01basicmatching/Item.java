@@ -2,9 +2,9 @@ package net.franckbenault.hamcrest.assertion.s01basicmatching;
 
 public class Item {
 
-	String name;
+	private String name;
 	
-	int price;
+	private int price;
 	
 	public Item(String name, int price) {
 		this.name= name;
