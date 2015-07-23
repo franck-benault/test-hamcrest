@@ -7,11 +7,13 @@ import static org.hamcrest.collection.IsEmptyIterable.emptyIterable;
 import static org.hamcrest.collection.IsEmptyIterable.emptyIterableOf;
 import static org.hamcrest.collection.IsIn.isIn;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
+import static org.hamcrest.collection.IsArray.array;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.everyItem;
 import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.is;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -101,12 +103,20 @@ public class CollectionMatchingTestCase {
 		//contains = contains all items but the order in not important
 		assertThat(col1,hasItems("v3", "v1"));
 	}
-	
+		
 	
 	@Test
 	public void t02eEveryItem() {
 		
 		List<Integer> col1 = Arrays.asList(2,3,4);
 		assertThat(col1,everyItem(greaterThan(1)));
+	}
+	
+	@Test
+	public void t03aIsArray() {
+		
+		String tab1[] = {"v1","v2","v3"};
+		//check strict order and all elements
+		assertThat(tab1,array(is("v1"),is("v2"),is("v3")));
 	}
 }
