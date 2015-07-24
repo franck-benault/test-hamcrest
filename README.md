@@ -57,43 +57,44 @@ assertThat(s1,is(not(equalTo(s2))));
 # string matching
 
 # Collection matching
-## matching empty
+## 1 matching empty
 ```
 assertThat(col,empty());
 assertThat(col,emptyCollectionOf(String.class));
 ```
-## matching with the content of the collection
-### hasSize
+## 2 A element is in a collection
+
+## 3 Collection has size
 ```
 List<String> col1 = Arrays.asList("v1","v2");
 assertThat(col1,hasSize(2));
 ```
-### elements in a collection
-#### contains
+## 4 collection has a single element
+
+## 5 collection has elements
+### contains
 contains = strict order all items
 ```		
 List<String> col1 = Arrays.asList("v1","v2","v3");
 assertThat(col1,contains("v1","v2", "v3")); //OK
 assertThat(col1,contains("v1","v2")); //Not OK
 ```
-#### containsInAnyOrder
+### containsInAnyOrder
 containsInAnyOrder = all items the order in not important
 ```		
 List<String> col1 = Arrays.asList("v1","v2","v3");
 assertThat(col1,containsInAnyOrder("v2","v1", "v3")); //OK
 assertThat(col1,containsInAnyOrder("v2","v3")); //Not OK
 ```
-#### hasItems
+### hasItems
 hasItems = not all items, the order in not important
 ```		
 List<String> col1 = Arrays.asList("v1","v2","v3");
 assertThat(col1,hasItems("v3", "v1")); //OK
 ```
 
-#### everyItem
+### everyItem
 ```
 List<Integer> col1 = Arrays.asList(2,3,4);
 assertThat(col1,everyItem(greaterThan(1)));
-```
-
 ```

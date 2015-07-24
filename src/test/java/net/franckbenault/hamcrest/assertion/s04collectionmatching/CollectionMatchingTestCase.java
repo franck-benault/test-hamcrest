@@ -46,7 +46,6 @@ public class CollectionMatchingTestCase {
 		List<String> col = new ArrayList<String>();
 		assertThat(col,emptyIterable());
 	}
-
 	
 	@Test
 	public void t01dEmptyIerableOf() {
@@ -54,6 +53,8 @@ public class CollectionMatchingTestCase {
 		List<String> col = new ArrayList<String>();
 		assertThat(col,emptyIterableOf(String.class));
 	}
+	
+
 
 	@Test
 	public void t02aIsInCollection() {
@@ -73,15 +74,16 @@ public class CollectionMatchingTestCase {
 		assertThat("v1",isIn(tab));
 	}
 	
+	//Size
 	@Test
-	public void t02cHasSize() {
+	public void t03cHasSize() {
 		
 		List<String> col1 = Arrays.asList("v1","v2");
 		assertThat(col1,hasSize(2));
 	}
 	
 	@Test
-	public void t02dContains() {
+	public void t05aContains() {
 		
 		List<String> col1 = Arrays.asList("v1","v2","v3");
 		//contains = strict order all items
@@ -89,7 +91,7 @@ public class CollectionMatchingTestCase {
 	}
 	
 	@Test
-	public void t02eContainsInAnyOrder() {
+	public void t05bContainsInAnyOrder() {
 		
 		List<String> col1 = Arrays.asList("v1","v2","v3");
 		//contains = contains all items but the order in not important
@@ -97,7 +99,7 @@ public class CollectionMatchingTestCase {
 	}
 	
 	@Test
-	public void t02dHasItems() {
+	public void t05cHasItems() {
 		
 		List<String> col1 = Arrays.asList("v1","v2","v3");
 		//contains = contains all items but the order in not important
@@ -106,14 +108,15 @@ public class CollectionMatchingTestCase {
 		
 	
 	@Test
-	public void t02eEveryItem() {
+	public void t05dEveryItem() {
 		
 		List<Integer> col1 = Arrays.asList(2,3,4);
 		assertThat(col1,everyItem(greaterThan(1)));
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Test
-	public void t03aIsArray() {
+	public void t06aIsArray() {
 		
 		String tab1[] = {"v1","v2","v3"};
 		//check strict order and all elements
