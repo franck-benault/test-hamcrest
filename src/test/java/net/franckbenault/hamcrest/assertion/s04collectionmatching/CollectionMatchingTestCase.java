@@ -5,6 +5,7 @@ import static org.hamcrest.collection.IsEmptyCollection.empty;
 import static org.hamcrest.collection.IsEmptyCollection.emptyCollectionOf;
 import static org.hamcrest.collection.IsEmptyIterable.emptyIterable;
 import static org.hamcrest.collection.IsEmptyIterable.emptyIterableOf;
+import static org.hamcrest.collection.IsArrayWithSize.emptyArray;
 import static org.hamcrest.collection.IsIn.isIn;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.collection.IsArray.array;
@@ -50,20 +51,23 @@ public class CollectionMatchingTestCase {
 	}
 	
 	@Test
-	public void t01dEmptyIerableOf() {
+	public void t01dEmptyIterableOf() {
 		
 		List<String> col = new ArrayList<String>();
 		assertThat(col,emptyIterableOf(String.class));
 	}
-	
 
+	@Test
+	public void t01eEmptyArray() {
+		
+		String tab[] = {};
+		assertThat(tab,emptyArray());
+	}
 
 	@Test
 	public void t02aIsInCollection() {
 		
 		List<String> col1 = Arrays.asList("v1","v2");
-
-
 		assertThat("v1",isIn(col1));
 	}
 	
@@ -71,8 +75,6 @@ public class CollectionMatchingTestCase {
 	public void t02bIsIntabs() {
 		
 		String tab[] = {"v1","v2"};
-
-
 		assertThat("v1",isIn(tab));
 	}
 

@@ -58,10 +58,17 @@ assertThat(s1,is(not(equalTo(s2))));
 
 # Collection matching
 ## 1 matching empty
+### empty collection
 ```
 assertThat(col,empty());
 assertThat(col,emptyCollectionOf(String.class));
 ```
+### empty array
+```
+String tab[] = {};
+assertThat(tab,emptyArray());
+```
+
 ## 2 A element is in a collection
 
 ## 3 Collection has size
