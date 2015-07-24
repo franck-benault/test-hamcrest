@@ -11,9 +11,11 @@ import static org.hamcrest.collection.IsArray.array;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasItems;
+import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.everyItem;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -73,7 +75,7 @@ public class CollectionMatchingTestCase {
 
 		assertThat("v1",isIn(tab));
 	}
-	
+
 	//Size
 	@Test
 	public void t03cHasSize() {
@@ -81,6 +83,23 @@ public class CollectionMatchingTestCase {
 		List<String> col1 = Arrays.asList("v1","v2");
 		assertThat(col1,hasSize(2));
 	}
+
+	
+	//Is a single element in a collection
+	@Test
+	public void t04aHasItem() {
+		
+		List<String> col1 = Arrays.asList("v1","v2","v3");
+		assertThat(col1,hasItem("v2"));
+	}
+
+	//is a single element not in a collection
+	@Test
+	public void t04bNotHasItem() {
+		
+		List<String> col1 = Arrays.asList("v1","v2","v3");
+		assertThat(col1,not(hasItem("v4")));
+	}	
 	
 	@Test
 	public void t05aContains() {

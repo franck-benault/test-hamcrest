@@ -70,6 +70,17 @@ List<String> col1 = Arrays.asList("v1","v2");
 assertThat(col1,hasSize(2));
 ```
 ## 4 collection has a single element
+### Is a single element in a collection
+```	
+List<String> col1 = Arrays.asList("v1","v2","v3");
+assertThat(col1,hasItem("v2"));
+```
+
+### Is a single element NOT in a collection
+```	
+List<String> col1 = Arrays.asList("v1","v2","v3");
+assertThat(col1,not(hasItem("v4")));
+```
 
 ## 5 collection has elements
 ### contains
