@@ -89,6 +89,13 @@ List<String> col1 = Arrays.asList("v1","v2","v3");
 assertThat(col1,not(hasItem("v4")));
 ```
 
+### Is a single element (not) in a tab
+```	
+String tab[] = {"v1","v2","v3"};
+assertThat(tab,hasItemInArray("v2"));
+assertThat(tab,not(hasItemInArray("v4")));
+```
+
 ## 5 collection has elements
 ### contains
 contains = strict order all items

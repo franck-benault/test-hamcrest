@@ -9,6 +9,7 @@ import static org.hamcrest.collection.IsArrayWithSize.emptyArray;
 import static org.hamcrest.collection.IsIn.isIn;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.collection.IsArray.array;
+import static org.hamcrest.collection.IsArrayContaining.hasItemInArray;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasItems;
@@ -102,6 +103,17 @@ public class CollectionMatchingTestCase {
 		List<String> col1 = Arrays.asList("v1","v2","v3");
 		assertThat(col1,not(hasItem("v4")));
 	}	
+	
+	//Is a single element in an Array
+	//Is a single element not in an Array
+	@Test
+	public void t04cHasItemInArray() {
+		
+		String tab[] = {"v1","v2","v3"};
+		assertThat(tab,hasItemInArray("v2"));
+		assertThat(tab,not(hasItemInArray("v4")));
+	}
+
 	
 	@Test
 	public void t05aContains() {
