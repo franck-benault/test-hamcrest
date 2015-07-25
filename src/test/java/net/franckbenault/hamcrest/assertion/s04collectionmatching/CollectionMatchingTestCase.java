@@ -58,12 +58,7 @@ public class CollectionMatchingTestCase {
 		assertThat(col,emptyIterableOf(String.class));
 	}
 
-	@Test
-	public void t01eEmptyArray() {
-		
-		String tab[] = {};
-		assertThat(tab,emptyArray());
-	}
+
 
 	@Test
 	public void t02aIsInCollection() {
@@ -72,12 +67,7 @@ public class CollectionMatchingTestCase {
 		assertThat("v1",isIn(col1));
 	}
 	
-	@Test
-	public void t02bIsIntabs() {
-		
-		String tab[] = {"v1","v2"};
-		assertThat("v1",isIn(tab));
-	}
+
 
 	//Size
 	@Test
@@ -104,15 +94,6 @@ public class CollectionMatchingTestCase {
 		assertThat(col1,not(hasItem("v4")));
 	}	
 	
-	//Is a single element in an Array
-	//Is a single element not in an Array
-	@Test
-	public void t04cHasItemInArray() {
-		
-		String tab[] = {"v1","v2","v3"};
-		assertThat(tab,hasItemInArray("v2"));
-		assertThat(tab,not(hasItemInArray("v4")));
-	}
 
 	
 	@Test
@@ -147,12 +128,5 @@ public class CollectionMatchingTestCase {
 		assertThat(col1,everyItem(greaterThan(1)));
 	}
 	
-	@SuppressWarnings("unchecked")
-	@Test
-	public void t06aIsArray() {
-		
-		String tab1[] = {"v1","v2","v3"};
-		//check strict order and all elements
-		assertThat(tab1,array(is("v1"),is("v2"),is("v3")));
-	}
+
 }

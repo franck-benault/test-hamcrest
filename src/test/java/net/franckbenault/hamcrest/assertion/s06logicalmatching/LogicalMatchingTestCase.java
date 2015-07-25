@@ -1,4 +1,4 @@
-package net.franckbenault.hamcrest.assertion.s05logicalmatching;
+package net.franckbenault.hamcrest.assertion.s06logicalmatching;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.AnyOf.anyOf;

@@ -63,11 +63,6 @@ assertThat(s1,is(not(equalTo(s2))));
 assertThat(col,empty());
 assertThat(col,emptyCollectionOf(String.class));
 ```
-### empty array
-```
-String tab[] = {};
-assertThat(tab,emptyArray());
-```
 
 ## 2 A element is in a collection
 
@@ -87,13 +82,6 @@ assertThat(col1,hasItem("v2"));
 ```	
 List<String> col1 = Arrays.asList("v1","v2","v3");
 assertThat(col1,not(hasItem("v4")));
-```
-
-### Is a single element (not) in a tab
-```	
-String tab[] = {"v1","v2","v3"};
-assertThat(tab,hasItemInArray("v2"));
-assertThat(tab,not(hasItemInArray("v4")));
 ```
 
 ## 5 collection has elements
@@ -123,3 +111,26 @@ assertThat(col1,hasItems("v3", "v1")); //OK
 List<Integer> col1 = Arrays.asList(2,3,4);
 assertThat(col1,everyItem(greaterThan(1)));
 ```
+
+
+# Array matching
+## 1 matching empty
+### empty array
+```
+String tab[] = {};
+assertThat(tab,emptyArray());
+```
+
+## 2 A element is in a collection
+
+## 3 Array has size
+
+## 4 Array has a single element
+### Is a single element (not) in a tab
+```	
+String tab[] = {"v1","v2","v3"};
+assertThat(tab,hasItemInArray("v2"));
+assertThat(tab,not(hasItemInArray("v4")));
+```
+
+## 5 Array has elements
