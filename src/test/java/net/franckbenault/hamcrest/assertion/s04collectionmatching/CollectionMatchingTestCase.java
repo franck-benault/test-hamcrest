@@ -7,6 +7,7 @@ import static org.hamcrest.collection.IsEmptyIterable.emptyIterable;
 import static org.hamcrest.collection.IsEmptyIterable.emptyIterableOf;
 import static org.hamcrest.collection.IsIn.isIn;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
+import org.hamcrest.collection.IsIterableWithSize;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasItems;
@@ -14,6 +15,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.everyItem;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.not;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -71,6 +73,14 @@ public class CollectionMatchingTestCase {
 		
 		List<String> col1 = Arrays.asList("v1","v2");
 		assertThat(col1,hasSize(2));
+	}
+	
+	//Size
+	@Test
+	public void t03dIterableWithSize() {
+		
+		Set<String> col1 = new HashSet<String>(Arrays.asList("v1","v2"));
+		assertThat(col1,IsIterableWithSize.<String>iterableWithSize(2));
 	}
 
 	
