@@ -134,3 +134,15 @@ assertThat(tab,not(hasItemInArray("v4")));
 ```
 
 ## 5 Array has elements
+### containsInAnyOrder
+```	
+String tab1[] = {"v1","v2","v3"};
+String tab2[] = {"v2","v1","v3"};
+assertThat(tab1,arrayContainingInAnyOrder(tab2));
+```	
+### containsInOrder 
+```		
+String tab1[] = {"v1","v2","v3"};
+String tab2[] = {"v1","v2","v3"};
+assertThat(tab1,arrayContaining(tab2));
+```	

@@ -6,6 +6,8 @@ import static org.hamcrest.collection.IsIn.isIn;
 import static org.hamcrest.collection.IsArray.array;
 import static org.hamcrest.collection.IsArrayContaining.hasItemInArray;
 import static org.hamcrest.collection.IsArrayContainingInAnyOrder.arrayContainingInAnyOrder;
+import static org.hamcrest.collection.IsArrayContainingInOrder.arrayContaining;
+
 import static org.hamcrest.collection.IsArrayWithSize.arrayWithSize;
 
 
@@ -60,6 +62,14 @@ public class ArrayMatchingTestCase {
 		String tab1[] = {"v1","v2","v3"};
 		String tab2[] = {"v2","v1","v3"};
 		assertThat(tab1,arrayContainingInAnyOrder(tab2));
+	}
+	
+	
+	@Test
+	public void t05bArrayContainingInOrder() {
+		String tab1[] = {"v1","v2","v3"};
+		String tab2[] = {"v1","v2","v3"};
+		assertThat(tab1,arrayContaining(tab2));
 	}
 	
 	@SuppressWarnings("unchecked")
