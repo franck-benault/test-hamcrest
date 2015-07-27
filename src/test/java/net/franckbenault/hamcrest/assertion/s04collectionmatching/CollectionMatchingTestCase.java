@@ -7,6 +7,8 @@ import static org.hamcrest.collection.IsEmptyIterable.emptyIterable;
 import static org.hamcrest.collection.IsEmptyIterable.emptyIterableOf;
 import static org.hamcrest.collection.IsIn.isIn;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
+import org.hamcrest.collection.IsIterableContainingInAnyOrder;
+import org.hamcrest.collection.IsIterableContainingInOrder;
 import org.hamcrest.collection.IsIterableWithSize;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
@@ -122,11 +124,29 @@ public class CollectionMatchingTestCase {
 	public void t05cHasItems() {
 		
 		List<String> col1 = Arrays.asList("v1","v2","v3");
-		//contains = contains all items but the order in not important
+		//contains = contains items but the order in not important
 		assertThat(col1,hasItems("v3", "v1"));
 	}
-		
 	
+	@Test
+	public void t05dIsIterableContainingInAnyOrder() {
+	
+		Set<String> col1 = new HashSet<String>(Arrays.asList("v1","v2","v3"));
+		
+		//contains = contains items but the order in not important
+		assertThat(col1,IsIterableContainingInAnyOrder.containsInAnyOrder("v2","v1","v3"));	
+	}
+		
+	@Test
+	public void t05eContainsInOrder() {
+			
+		Set<String> col1 = new HashSet<String>(Arrays.asList("v1","v2","v3"));
+		
+		//contains = contains items but the order is important
+		assertThat(col1,IsIterableContainingInOrder.contains("v1","v2","v3"));	
+
+	}
+		
 	@Test
 	public void t05dEveryItem() {
 		
