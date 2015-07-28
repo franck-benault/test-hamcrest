@@ -7,9 +7,11 @@ import static org.hamcrest.collection.IsEmptyIterable.emptyIterable;
 import static org.hamcrest.collection.IsEmptyIterable.emptyIterableOf;
 import static org.hamcrest.collection.IsIn.isIn;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
+
 import org.hamcrest.collection.IsIterableContainingInAnyOrder;
 import org.hamcrest.collection.IsIterableContainingInOrder;
 import org.hamcrest.collection.IsIterableWithSize;
+
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasItems;
@@ -19,12 +21,14 @@ import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.not;
 
 
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class CollectionMatchingTestCase {
@@ -140,10 +144,10 @@ public class CollectionMatchingTestCase {
 	@Test
 	public void t05eContainsInOrder() {
 			
-		Set<String> col1 = new HashSet<String>(Arrays.asList("v1","v2","v3"));
+		List<String> list = Arrays.asList("v1","v2","v3");
 		
 		//contains = contains items but the order is important
-		assertThat(col1,IsIterableContainingInOrder.contains("v1","v2","v3"));	
+		assertThat(list,IsIterableContainingInOrder.contains("v1","v2","v3"));	
 
 	}
 		
