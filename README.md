@@ -145,4 +145,13 @@ assertThat(tab1,arrayContainingInAnyOrder(tab2));
 String tab1[] = {"v1","v2","v3"};
 String tab2[] = {"v1","v2","v3"};
 assertThat(tab1,arrayContaining(tab2));
-```	
+```
+
+# Map matching
+## hasEntry
+```
+Map<Integer, String> myMap = new HashMap<Integer, String>();
+myMap.put(1, "one");
+myMap.put(2, "two"); 
+assertThat(myMap, hasEntry(1,"one"));
+```
