@@ -20,4 +20,13 @@ public class MapMatchingTestCase {
 	    myMap.put(2, "two"); 
 	    assertThat(myMap, hasEntry(1,"one"));
 	}
+	
+	@Test
+	public void t01bHasKey() {
+		
+		Map<Integer, String> myMap = new HashMap<Integer, String>();
+	    myMap.put(1, "one");
+	    myMap.put(2, "two"); 
+	    assertThat(myMap, hasKey(1));
+	}
 }
