@@ -169,3 +169,12 @@ myMap.put(1, "one");
 myMap.put(2, "two"); 
 assertThat(myMap, hasValue("two"));
 ```
+
+# Bean matching
+## hasProperty
+```
+//bean has name and age properties
+BeanSample bean = new BeanSample();
+assertThat(bean, hasProperty("name"));
+```
+		

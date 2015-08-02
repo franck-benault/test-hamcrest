@@ -6,6 +6,14 @@ public class BeanSample {
 	
 	private String name;
 
+	public BeanSample() {
+	}
+	
+	public BeanSample(String name, int age) {
+		this.name = name;
+		this.age =age;
+	}
+	
 	public int getAge() {
 		return age;
 	}
